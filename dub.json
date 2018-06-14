@@ -9,7 +9,13 @@
 
     "targetType": "sourceLibrary",
     "targetPath": "./bin",
-    "libs": ["easyff"],
+    "libs": [
+        "easyff",
+        "avutil",
+        "avcodec",
+        "avformat",
+        "swscale"
+    ],
 
     "sourcePaths": ["./src"],
 
