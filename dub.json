@@ -1,0 +1,26 @@
+{
+    "name": "easyff-d",
+    "description": "D bindings of easyFF.",
+    "license": "LGPL-3.0",
+    "copyright": "Copyright © 2018, KanzakiKino",
+
+    "authors": ["KanzakiKino"],
+    "homepage": "https://knzk.work",
+
+    "targetType": "sourceLibrary",
+    "targetPath": "./bin",
+    "libs": ["easyff"],
+
+    "sourcePaths": ["./src"],
+
+    "configurations": [
+        {
+            "name": "default"
+        },
+        {
+            "name": "unittest",
+            "targetType": "executable",
+            "mainSourceFile": "./test.d"
+        }
+    ]
+}
