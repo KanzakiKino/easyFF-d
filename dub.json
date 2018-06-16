@@ -14,7 +14,8 @@
         "avutil",
         "avcodec",
         "avformat",
-        "swscale"
+        "swscale",
+        "swresample"
     ],
 
     "sourcePaths": ["./src"],
