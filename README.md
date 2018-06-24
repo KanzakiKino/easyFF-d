@@ -8,7 +8,7 @@ Original written in C is [here](https://github.com/KanzakiKino/easyFF).
 
 ## Requirements
 - FFmpeg 4.0
-- libeasyff 0.0.2-alpha
+- libeasyff [master](https://github.com/KanzakiKino/easyFF/tree/c7055b296f7cd9d59ea0508fcdde18cfe2037e17)
 
 ## Using with DUB
 
