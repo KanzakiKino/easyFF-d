@@ -7,13 +7,14 @@ extern(C) @nogc nothrow
     enum FFError : ubyte
     {
         NoError       = 0x00,
-        NullPointer   = 0x01,
-        IllegalObject = 0x02,
-        CreateContext = 0x03,
-        Stream        = 0x04,
-        NoCodec       = 0x05,
-        PacketLost    = 0x06,
-        InvalidFrame  = 0x07,
+        NullPointer,
+        IllegalObject,
+        CreateContext,
+        InvalidContext,
+        Stream,
+        NoCodec,
+        PacketLost,
+        InvalidFrame,
     }
 
     struct FFMeta
@@ -67,13 +68,24 @@ extern(C) @nogc nothrow
     float*  FFSound_getBuffer     ( FFSound* );
 
     struct FFStream;
-    FFError    FFStream_checkError    ( FFStream* );
-    int        FFStream_getIndex      ( FFStream* );
-    char       FFStream_isVideo       ( FFStream* );
-    char       FFStream_isAudio       ( FFStream* );
-    FFRational FFStream_getTimebase   ( FFStream* );
-    FFRational FFStream_getAvgFPS     ( FFStream* );
-    long       FFStream_getStartTime  ( FFStream* );
-    long       FFStream_getDuration   ( FFStream* );
-    long       FFStream_getFrameCount ( FFStream* );
+    FFError    FFStream_checkError        ( FFStream* );
+    int        FFStream_getIndex          ( FFStream* );
+    char       FFStream_isWritable        ( FFStream* );
+    char       FFStream_isVideo           ( FFStream* );
+    char       FFStream_isAudio           ( FFStream* );
+    FFRational FFStream_getTimebase       ( FFStream* );
+    FFRational FFStream_getAvgFPS         ( FFStream* );
+    long       FFStream_getStartTime      ( FFStream* );
+    long       FFStream_getDuration       ( FFStream* );
+    long       FFStream_getFrameCount     ( FFStream* );
+    FFError    FFStream_setupVideoEncoder ( FFStream*, int, int, FFRational );
+    FFError    FFStream_setupAudioEncoder ( FFStream*, int, int, FFRational );
+
+    struct FFWriter;
+    FFWriter* FFWriter_new               ( const(char)* );
+    void      FFWriter_delete            ( FFWriter** );
+    FFError   FFWriter_checkError        ( FFWriter* );
+    FFStream* FFWriter_createVideoStream ( FFWriter* );
+    FFStream* FFWriter_createAudioStream ( FFWriter* );
+    FFStream* FFWriter_writeHeader       ( FFWriter* );
 }
