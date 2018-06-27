@@ -20,6 +20,8 @@
 
     "sourcePaths": ["./src"],
 
+    "-ddoxFilterArgs": ["--in","easyff."],
+
     "configurations": [
         {
             "name": "default"

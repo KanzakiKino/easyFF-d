@@ -1,3 +1,4 @@
 /.dub/
 /bin/
+/docs.json
 *.swp
