@@ -39,12 +39,19 @@ extern(C) @nogc nothrow
     }
 
     struct FFImage;
-    void    FFImage_delete     ( FFImage** );
-    FFError FFImage_checkError ( FFImage* );
-    long    FFImage_getPts     ( FFImage* );
-    int     FFImage_getWidth   ( FFImage* );
-    int     FFImage_getHeight  ( FFImage* );
-    ubyte*  FFImage_getBuffer  ( FFImage* );
+    FFImage* FFImage_new        ( int, int, long );
+    void     FFImage_delete     ( FFImage** );
+    FFError  FFImage_checkError ( FFImage* );
+    long     FFImage_getPts     ( FFImage* );
+    void     FFImage_setPts     ( FFImage*, long );
+    int      FFImage_getWidth   ( FFImage* );
+    int      FFImage_getHeight  ( FFImage* );
+    ubyte*   FFImage_getBuffer  ( FFImage* );
+
+    struct FFOption;
+    FFOption* FFOption_new    ();
+    void      FFOption_delete ( FFOption** );
+    FFError   FFOption_set    ( FFOption*, const(char)*, const(char)* );
 
     struct FFReader;
     FFReader* FFReader_new                 ( const(char)* );
@@ -56,16 +63,19 @@ extern(C) @nogc nothrow
     FFMeta    FFReader_getMeta             ( FFReader* );
     byte      FFReader_decode              ( FFReader*, FFStream* );
     FFImage*  FFReader_convertFrameToImage ( FFReader* );
-    FFSound*  FFReader_convertFrameToSound ( FFReader* );
+    FFSound*  FFReader_convertFrameToSound ( FFReader*, int, int );
+    FFError   FFReader_seek                ( FFReader*, FFStream*, long );
 
     struct FFSound;
-    void    FFSound_delete        ( FFSound** );
-    FFError FFSound_checkError    ( FFSound* );
-    long    FFSound_getPts        ( FFSound* );
-    int     FFSound_getSamples    ( FFSound* );
-    int     FFSound_getChannels   ( FFSound* );
-    int     FFSound_getSampleRate ( FFSound* );
-    float*  FFSound_getBuffer     ( FFSound* );
+    FFSound* FFSound_new           ( int, int, int, long );
+    void     FFSound_delete        ( FFSound** );
+    FFError  FFSound_checkError    ( FFSound* );
+    long     FFSound_getPts        ( FFSound* );
+    void     FFSound_setPts        ( FFSound*, long );
+    int      FFSound_getSamples    ( FFSound* );
+    int      FFSound_getChannels   ( FFSound* );
+    int      FFSound_getSampleRate ( FFSound* );
+    float*   FFSound_getBuffer     ( FFSound* );
 
     struct FFStream;
     FFError    FFStream_checkError        ( FFStream* );
@@ -78,8 +88,8 @@ extern(C) @nogc nothrow
     long       FFStream_getStartTime      ( FFStream* );
     long       FFStream_getDuration       ( FFStream* );
     long       FFStream_getFrameCount     ( FFStream* );
-    FFError    FFStream_setupVideoEncoder ( FFStream*, int, int, FFRational );
-    FFError    FFStream_setupAudioEncoder ( FFStream*, int, int, FFRational );
+    FFError    FFStream_setupVideoEncoder ( FFStream*, int, int, FFRational, FFOption* );
+    FFError    FFStream_setupAudioEncoder ( FFStream*, int, int, FFOption* );
 
     struct FFWriter;
     FFWriter* FFWriter_new               ( const(char)* );
@@ -87,5 +97,9 @@ extern(C) @nogc nothrow
     FFError   FFWriter_checkError        ( FFWriter* );
     FFStream* FFWriter_createVideoStream ( FFWriter* );
     FFStream* FFWriter_createAudioStream ( FFWriter* );
+    FFError   FFWriter_setMeta           ( FFWriter*, FFMeta* );
     FFStream* FFWriter_writeHeader       ( FFWriter* );
+    FFError   FFWriter_encodeImage       ( FFWriter*, FFImage* );
+    FFError   FFWriter_encodeSound       ( FFWriter*, FFSound* );
+    FFError   FFWriter_flush             ( FFWriter* );
 }
