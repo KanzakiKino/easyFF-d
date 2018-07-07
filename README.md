@@ -8,13 +8,13 @@ Original written in C is [here](https://github.com/KanzakiKino/easyFF).
 
 ## Requirements
 - FFmpeg 4.0
-- libeasyff [v1.0.1](https://github.com/KanzakiKino/easyFF/releases/tag/v1.0.1)
+- libeasyff [v1.0.2](https://github.com/KanzakiKino/easyFF/releases/tag/v1.0.2)
 
 ## Using with DUB
 
 Write this in `dependencies` section.
 
-    "easyff-d": "~>1.0.1"
+    "easyff-d": "~>1.0.3"
 
 ## Example
 

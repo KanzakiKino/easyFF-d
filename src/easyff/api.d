@@ -4,6 +4,12 @@ module easyff.api;
 
 extern(C) @nogc nothrow
 {
+    uint FF_getMajorVersion ();
+    uint FF_getMinorVersion ();
+    uint FF_getMicroVersion ();
+
+    char FF_hasVersionIntegrity ();
+
     enum FFError : ubyte
     {
         NoError       = 0x00,
