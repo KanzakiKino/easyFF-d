@@ -3,6 +3,7 @@
     "description": "D bindings of easyFF.",
     "license": "LGPL-3.0",
     "copyright": "Copyright © 2018, KanzakiKino",
+    "platforms": ["posix"],
 
     "authors": ["KanzakiKino"],
     "homepage": "https://knzk.work",
@@ -17,6 +18,8 @@
         "swscale",
         "swresample"
     ],
+    "lflags-posix-x86_64": ["-L./lib/posix-x86_64"],
+    "lflags-posix-x86"   : ["-L./lib/posix-x86"],
 
     "sourcePaths": ["./src"],
 
