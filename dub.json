@@ -17,8 +17,8 @@
         "swscale",
         "swresample"
     ],
-    "lflags-posix-x86_64": ["./lib/posix-x86_64/libeasyff.a"],
-    "lflags-posix-x86"   : ["./lib/posix-x86/libeasyff.a"],
+    "lflags-posix-x86_64": ["$PACKAGE_DIR/lib/posix-x86_64/libeasyff.a"],
+    "lflags-posix-x86"   : ["$PACKAGE_DIR/lib/posix-x86/libeasyff.a"],
 
     "sourcePaths": ["./src"],
 
