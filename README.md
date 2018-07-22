@@ -11,7 +11,7 @@ Original written in C is [here](https://github.com/KanzakiKino/easyFF).
 
 Write this in `dependencies` section.
 
-    "easyff-d": "~>1.0.4"
+    "easyff-d": "~>1.0.5"
 
 ## Example
 
