@@ -8,7 +8,7 @@
     "authors": ["KanzakiKino"],
     "homepage": "https://knzk.work",
 
-    "targetType": "sourceLibrary",
+    "targetType": "staticLibrary",
     "targetPath": "./bin",
     "libs": [
         "easyff",
