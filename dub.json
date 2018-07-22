@@ -11,15 +11,14 @@
     "targetType": "staticLibrary",
     "targetPath": "./bin",
     "libs": [
-        "easyff",
         "avutil",
         "avcodec",
         "avformat",
         "swscale",
         "swresample"
     ],
-    "lflags-posix-x86_64": ["-L./lib/posix-x86_64"],
-    "lflags-posix-x86"   : ["-L./lib/posix-x86"],
+    "lflags-posix-x86_64": ["./lib/posix-x86_64/libeasyff.a"],
+    "lflags-posix-x86"   : ["./lib/posix-x86/libeasyff.a"],
 
     "sourcePaths": ["./src"],
 
