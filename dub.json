@@ -15,11 +15,13 @@
         "avcodec",
         "avformat",
         "swscale",
-        "swresample"
+        "swresample",
+        "easyff"
     ],
-    "lflags-posix-x86_64": ["$PACKAGE_DIR/lib/posix-x86_64/libeasyff.a"],
-    "lflags-posix-x86"   : ["$PACKAGE_DIR/lib/posix-x86/libeasyff.a"],
-    "libs-windows-x86"   : ["$PACKAGE_DIR/lib/windows-x86/easyff"],
+    "lflags-posix-x86_64"  : ["$PACKAGE_DIR/lib/posix-x86_64/libeasyff.a"],
+    "lflags-posix-x86"     : ["$PACKAGE_DIR/lib/posix-x86/libeasyff.a"],
+
+    "lflags-windows-x86"   : ["-LIBPATH:$PACKAGE_DIR/lib/windows-x86/"],
 
     "sourcePaths": ["./src"],
 
@@ -27,7 +29,8 @@
 
     "configurations": [
         {
-            "name": "default"
+            "name": "default",
+            "copyFiles-windows-x86": ["./lib/windows-x86/*.dll"]
         },
         {
             "name": "unittest",
