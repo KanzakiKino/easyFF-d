@@ -19,6 +19,7 @@
     ],
     "lflags-posix-x86_64": ["$PACKAGE_DIR/lib/posix-x86_64/libeasyff.a"],
     "lflags-posix-x86"   : ["$PACKAGE_DIR/lib/posix-x86/libeasyff.a"],
+    "libs-windows-x86"   : ["$PACKAGE_DIR/lib/windows-x86/easyff"],
 
     "sourcePaths": ["./src"],
 
