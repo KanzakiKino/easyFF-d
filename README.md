@@ -4,11 +4,17 @@ easyFF-d
 easyFF-d is D bindings of a wrapper library for FFmpeg.  
 Original written in C is [here](https://github.com/KanzakiKino/easyFF).
 
+## Requirements
+
+See the [easyFF](https://github.com/KanzakiKino/easyFF).
+
+If you use Windows, you don't need to do anything.
+
 ## Using with DUB
 
 Write this in `dependencies` section.
 
-    "easyff-d": "~>1.1.0"
+    "easyff-d": "~>1.0.7"
 
 ### on Windows
 

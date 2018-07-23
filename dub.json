@@ -18,8 +18,8 @@
         "swresample",
         "easyff"
     ],
-    "lflags-posix-x86_64"  : ["$PACKAGE_DIR/lib/posix-x86_64/libeasyff.a"],
-    "lflags-posix-x86"     : ["$PACKAGE_DIR/lib/posix-x86/libeasyff.a"],
+    "lflags-posix-x86_64"  : ["-L$PACKAGE_DIR/lib/posix-x86_64/"],
+    "lflags-posix-x86"     : ["-L$PACKAGE_DIR/lib/posix-x86/"],
 
     "lflags-windows-x86"   : ["-LIBPATH:$PACKAGE_DIR/lib/windows-x86/"],
 
