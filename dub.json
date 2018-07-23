@@ -1,7 +1,7 @@
 {
     "name": "easyff-d",
     "description": "D bindings of easyFF.",
-    "license": "LGPL-3.0",
+    "license": "GPL-3.0",
     "copyright": "Copyright © 2018, KanzakiKino",
     "platforms": ["posix","windows"],
 
