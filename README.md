@@ -10,12 +10,6 @@ See the [easyFF](https://github.com/KanzakiKino/easyFF).
 
 If you use Windows, you don't need to do anything.
 
-## Using with DUB
-
-Write this in `dependencies` section.
-
-    "easyff-d": "~>1.0.7"
-
 ### on Windows
 
 You must use VisualStudio's linker instead of lld-link on Windows.
