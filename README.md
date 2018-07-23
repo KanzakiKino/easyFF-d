@@ -13,6 +13,10 @@ Write this in `dependencies` section.
 
     "easyff-d": "~>1.0.6"
 
+### on Windows
+
+You must use VisualStudio's linker instead of lld-link on Windows.
+
 ## Example
 
 You can see `test.d`.

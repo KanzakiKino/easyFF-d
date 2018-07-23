@@ -3,7 +3,7 @@
     "description": "D bindings of easyFF.",
     "license": "LGPL-3.0",
     "copyright": "Copyright © 2018, KanzakiKino",
-    "platforms": ["posix"],
+    "platforms": ["posix","windows"],
 
     "authors": ["KanzakiKino"],
     "homepage": "https://knzk.work",
