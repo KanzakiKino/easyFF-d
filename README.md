@@ -26,7 +26,7 @@ You can see `test.d`.
 
 ## License
 
-GPL 3.0
+LGPL 3.0
 
 ## Author
 
